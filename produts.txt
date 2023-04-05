@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class ProductSales {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String productName;
+        double productPrice, totalCost = 0;
+        int productQuantity, numProducts;
+
+        System.out.print("Enter the number of products to sell: ");
+        numProducts = input.nextInt();
+
+        for (int i = 1; i <= numProducts; i++) {
+            System.out.println("Enter details for product " + i + ":");
+            System.out.print("Name: ");
+            productName = input.next();
+            System.out.print("Price: ");
+            productPrice = input.nextDouble();
+            System.out.print("Quantity: ");
+            productQuantity = input.nextInt();
+
+            double productTotal = productPrice * productQuantity;
+            System.out.println("Total cost for " + productName + ": $" + productTotal);
+            totalCost += productTotal;
+        }
+
+        System.out.println("Total cost for all products: $" + totalCost);
+    }
+}
